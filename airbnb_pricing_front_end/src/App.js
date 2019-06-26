@@ -5,9 +5,12 @@ import NavBar from './Components/Navbar';
 import BaseInputs from './Components/BaseInputs';
 
 
+
+
 import './App.css';
 
 function App() {
+
   return (
     <div>
        <NavBar />
@@ -18,7 +21,6 @@ function App() {
       <body>
         <BaseInputs />
       </body>
-      
     </div>
   );
 }

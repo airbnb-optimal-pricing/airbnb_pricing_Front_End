@@ -11,6 +11,9 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem } from 'reactstrap';
+
+    import RegisterModal from './RegisterModal';
+    import LoginModal from './LoginModal';
   
   export default class NavBar extends React.Component {
     constructor(props) {
@@ -34,32 +37,29 @@ import {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                {/* <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
-                </NavItem> */}
                 <NavItem>
                   <NavLink href="#">Login</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="#">Placeholder</NavLink>
+                  <NavLink href="#">About Us</NavLink>
                 </NavItem>
-                {/* <UncontrolledDropdown nav inNavbar>
+                <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
-                    Options
+                    Join/Login
                   </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
-                      Option 1
+                      <RegisterModal />
                     </DropdownItem>
                     <DropdownItem>
-                      Option 2
+                      <LoginModal />
                     </DropdownItem>
                     <DropdownItem divider />
-                    <DropdownItem>
+                    {/* <DropdownItem>
                       Reset
-                    </DropdownItem>
+                    </DropdownItem> */}
                   </DropdownMenu>
-                </UncontrolledDropdown> */}
+                </UncontrolledDropdown>
               </Nav>
             </Collapse>
           </Navbar>
