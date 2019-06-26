@@ -26,7 +26,7 @@ class LoginModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Register</ModalHeader>
           <ModalBody>
-           <Login />
+           <Login handleSuccessfulAuth ={this.handleSuccessfulAuth} />
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>

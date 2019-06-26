@@ -11,6 +11,12 @@ class RegisterModal extends React.Component {
     };
 
     this.toggle = this.toggle.bind(this);
+
+    this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
+  }
+
+  handleSuccessfulAuth(data) {
+    this.props.handleLogin(data);
   }
 
   toggle() {
@@ -26,7 +32,7 @@ class RegisterModal extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Register</ModalHeader>
           <ModalBody>
-           <Register />
+           <Register handleSuccessfulAuth ={this.handleSuccessfulAuth} />
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>

@@ -12,8 +12,8 @@ import {
     DropdownMenu,
     DropdownItem } from 'reactstrap';
 
-    import RegisterModal from './RegisterModal';
-    import LoginModal from './LoginModal';
+    import RegisterModal from '../Components/Auth/RegisterModal';
+    import LoginModal from '../Components/Auth/LoginModal';
   
   export default class NavBar extends React.Component {
     constructor(props) {

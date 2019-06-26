@@ -6,7 +6,7 @@ export default class Login extends Component {
     super(props);
 
     this.state = {
-      email: "",
+      username: "",
       password: "",
       loginErrors: ""
     };
@@ -22,14 +22,14 @@ export default class Login extends Component {
   }
 
   handleSubmit(event) {
-    const { email, password } = this.state;
+    const { username, password } = this.state;
 
     axios
       .post(
-        "http://localhost:3001/sessions",
+        "https://airbnboptimalprice-backend.herokuapp.com/auth/login",
         {
           user: {
-            email: email,
+            username: username,
             password: password
           }
         },
@@ -51,10 +51,10 @@ export default class Login extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
+            type="username"
+            name="username"
+            placeholder="username"
+            value={this.state.username}
             onChange={this.handleChange}
             required
           />

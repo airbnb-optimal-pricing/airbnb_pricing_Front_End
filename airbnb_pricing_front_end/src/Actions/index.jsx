@@ -14,13 +14,12 @@ export const LogIn = credentials => dispatch => {
     dispatch({type: LOGIN_START});
     return axios
         .post(
-            `#`, credentials
+            `https://airbnboptimalprice-backend.herokuapp.com/auth/login`, credentials
         )
-        .then( res => {
-            //setting these on local so we can grab them easily later
-            localStorage.setItem('token', res.data.token);
-            localStorage.setItem('userid', res.data.user.id);
-            dispatch({type: LOGIN_SUCCESS, payload: res.data});
+        .then( response => {
+            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('username', response.data.user.id);
+            dispatch({type: LOGIN_SUCCESS, payload: response.data});
         })
         .catch(error => {
             console.log(error);
@@ -40,7 +39,7 @@ export const Register = newUser => dispatch => {
     dispatch({type: REGISTER_START});
     return axios 
         .post(
-            `#`, newUser
+            `https://airbnboptimalprice-backend.herokuapp.com/auth/register`, newUser
         )
         .then(res => {
             localStorage.setItem('token', res.data.token);

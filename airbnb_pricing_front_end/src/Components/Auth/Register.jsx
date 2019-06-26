@@ -6,9 +6,8 @@ export default class Register extends Component {
     super(props);
 
     this.state = {
-      email: "",
+      username: "",
       password: "",
-      password_confirmation: "",
       registrationErrors: ""
     };
 
@@ -23,16 +22,16 @@ export default class Register extends Component {
   }
 
   handleSubmit(event) {
-    const { email, password, password_confirmation } = this.state;
+    const { username, password } = this.state;
 
     axios
       .post(
-        "http://localhost:3001/registrations",
+        "https://airbnboptimalprice-backend.herokuapp.com/auth/register",
         {
           user: {
-            email: email,
+            username: username,
             password: password,
-            password_confirmation: password_confirmation
+
           }
         },
         { withCredentials: true }
@@ -53,10 +52,10 @@ export default class Register extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
+            type="username"
+            name="username"
+            placeholder="username"
+            value={this.state.username}
             onChange={this.handleChange}
             required
           />
@@ -66,15 +65,6 @@ export default class Register extends Component {
             name="password"
             placeholder="Password"
             value={this.state.password}
-            onChange={this.handleChange}
-            required
-          />
-
-          <input
-            type="password"
-            name="password_confirmation"
-            placeholder="Password confirmation"
-            value={this.state.password_confirmation}
             onChange={this.handleChange}
             required
           />
