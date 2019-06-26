@@ -1,41 +1,56 @@
 import React from 'react'
 
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 //Make sure to change the Types to be more accurate and specific before finalizing
 
-export default class BaseInputs extends React.Component {
+export default class RegisteredInputs extends React.Component {
+
+
+
+  submitForm(event) {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <Form>
         <FormGroup>
-          <Label for="exampleEmail">Where is your property located?</Label>
-          <Input type="email" name="email" id="exampleEmail" placeholder="Placeholder" />
+          <Label for="Zip">Zip Code</Label>
+          <Input type="text" name="zip" id="exampleZip" placeholder="Zip Code" />
         </FormGroup>
         <FormGroup>
-          <Label for="exampleSelect">Are you renting an entire home/apartment, or just a room?</Label>
-          <Input type="select" name="select" id="exampleSelect">
+          <Label for="PropertyType">Property Type</Label>
+          <Input type="select" name="propertyType" id="PropertyType">
+            <option>Apartment</option>
+            <option>House</option>
+            <option>Condominium</option>
+            <option>Guest House</option>
+            <option>Other</option>
+            <option>Guest Suite</option>
+            <option>Townhouse</option>
+            <option>Bungalow</option>
+            <option>Loft</option>
+            <option>Villa</option>
+          </Input>
+        </FormGroup>
+        <FormGroup>
+          <Label for="RoomType">Room Type</Label>
+          <Input type="select" name="RoomType" id="RoomType">
+            <option>Single Room</option>
             <option>Entire Property</option>
-            <option>Room</option>
           </Input>
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleSelect">Number of Bedrooms</Label>
-          <Input type="select" name="select" id="exampleSelect">
-            <option>1-2</option>
-            <option>2-3</option>
-            <option>3-4</option>
-            <option>4+</option>
-          </Input>
+          </FormGroup>
           <FormGroup>
-          <Label for="exampleSelect">Number of Bathrooms</Label>
-          <Input type="select" name="select" id="exampleSelect">
+          <Label for="Accommodates">Accommodates How Many Guests?</Label>
+          <Input type="select" name="Accommodates" id="Accommodates">
             <option>1</option>
             <option>2</option>
-            <option>3+</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5+</option>
           </Input>
-        </FormGroup>
-        </FormGroup>
+          </FormGroup>
         <Button>Submit</Button>
       </Form>
     );
