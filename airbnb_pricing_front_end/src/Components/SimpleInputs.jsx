@@ -1,52 +1,73 @@
-import React from 'react'
-
+import React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { connect } from 'react-redux';
+import { simpleFormSubmit } from '../Actions';
 
-//Make sure to change the Types to be more accurate and specific before finalizing
+//styled-components
 
-export default class SimpleInputs extends React.Component {
-  constructor() {
-    super();
-    this.submitForm = this.submitForm.bind(this);
+import styled from 'styled-components';
+
+
+const StyledBody = styled.body`
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin-left: 10%;
+`;
+
+//component
+
+class SimpleInputs extends React.Component {
+  state = {
+    form: {
+      zipcode: '',
+      bedrooms: '',
+      bathrooms: '',
+    }
   }
 
+  updateHandler = e => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
 
-  submitForm(event) {
-    event.preventDefault();
-    const data = new FormData(event.target);
+  simpleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log('submitting:');
 
-    fetch('#', {
-      method: 'Post',
-      body: data,
-    })
+    this.props.simpleFormSubmit(this.state.form)
+
   }
 
   render() {
     return (
-      <Form>
-        <FormGroup>
-          <Label for="Zip">Zip Code</Label>
-          <Input type="text" name="zip" id="exampleZip" placeholder="Zip Code" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="Bathrooms">Number of Bathrooms</Label>
-          <Input type="select" name="Bathrooms" id="Bathrooms">
-            <option>1-2</option>
-            <option>2-3</option>
-            <option>3-4</option>
-            <option>4+</option>
-          </Input>
+      <StyledBody>
+        <Form onSubmit={this.simpleFormSubmit} >
+          <FormGroup>
+            <Label for="Zip">Zip Code</Label>
+            <Input value={this.state.zipCode} type="number" name="zipCode" id="exampleZip" placeholder="Zip Code" onChange={this.updateHandler} />
           </FormGroup>
           <FormGroup>
-          <Label for="Bedrooms">Number of Bedrooms</Label>
-          <Input type="select" name="Bedrooms" id="Bedrooms">
-            <option>1</option>
-            <option>2</option>
-            <option>3+</option>
-          </Input>
-        </FormGroup>
-        <Button>Submit</Button>
-      </Form>
+            <Label for="Bedrooms">Number of Bedrooms</Label>
+            <Input value={this.state.bedrooms} type="number" name="bedrooms" id="examplebedrooms" placeholder="Number of Bedrooms" onChange={this.updateHandler} />
+          </FormGroup>
+          <FormGroup>
+            <Label for="Bathrooms">Number of Bathrooms</Label>
+            <Input value={this.state.bathrooms} type="number" name="bathrooms" id="examplebathrooms" placeholder="Number of Bathrooms" onChange={this.updateHandler} />
+            </FormGroup>
+          <Button>Submit</Button>
+        </Form>
+      </StyledBody>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  isSubmitting : state.isSubmitting
+});
+
+export default connect(mapStateToProps, { simpleFormSubmit })(SimpleInputs);

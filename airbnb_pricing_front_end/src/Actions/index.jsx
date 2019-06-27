@@ -52,3 +52,46 @@ export const Register = newUser => dispatch => {
         })
 };
 
+//simple form submission types
+
+export const SIMPLE_FORM_START = 'SIMPLE_FORM_START';
+export const SIMPLE_FORM_SUCCESS = 'SIMPLE_FORM_SUCCESS';
+export const SIMPLE_FORM_FAILURE = 'SIMPLE_FORM_FAILURE';
+
+//simple form function
+
+export const simpleFormSubmit = newSimpleSubmit => dispatch => {
+    dispatch({type: SIMPLE_FORM_START});
+    return axios
+        .post(
+            'https://airbnboptimalprice-backend.herokuapp.com/simple/simpleprediction', newSimpleSubmit
+        )
+        .then(res => {
+            dispatch({type: SIMPLE_FORM_SUCCESS, payload: res.data})
+        })
+        .catch(error => {
+            dispatch({type: SIMPLE_FORM_FAILURE})
+        })
+};
+
+//full form submission types
+
+export const FULL_FORM_START = 'FULL_FORM_START';
+export const FULL_FORM_SUCCESS = 'FULL_FORM_SUCCESS';
+export const FULL_FORM_FAILURE = 'FULL_FORM_FAILURE';
+
+// full form function
+
+export const FullFormSubmit = newFullSubmit => dispatch => {
+    dispatch({type: FULL_FORM_START});
+    return axios
+        .post(
+            '#', newFullSubmit
+        )
+        .then(res => {
+            dispatch({type: FULL_FORM_SUCCESS, payload: res.data})
+        })
+        .catch(error => {
+            dispatch({type: FULL_FORM_FAILURE})
+        })
+};

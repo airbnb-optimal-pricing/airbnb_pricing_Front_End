@@ -4,37 +4,64 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
 
-
-//Make sure to change the Types to be more accurate and specific before finalizing
-
 export default class FullInputs extends React.Component {
-  constructor() {
-    super();
-    this.submitForm = this.submitForm.bind(this);
+  state = {
+    form: {
+      zipCode: 0,
+      proprtyType: 'propertyType',
+      roomType: 'roomType',
+      accommodates: 'accommodates',
+      bathrooms: 'bathrooms',
+      bedrooms: 'bedrooms',
+      beds: 'beds',
+      bedType: 'bedType',
+    }
   }
 
+  updateHandler = e => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
 
-  submitForm(event) {
-    event.preventDefault();
-    const data = new FormData(event.target);
 
-    fetch('#', {
-      method: 'Post',
-      body: data,
+  submitFullForm = (e) => {
+    e.preventDefault();
+    console.log(this.state.form);
+    this.setState({
+      form: {
+        zipCode: 0,
+        proprtyType: 'propertyType',
+        roomType: 'roomType',
+        accommodates: 'accommodates',
+        bathrooms: 'bathrooms',
+        bedrooms: 'bedrooms',
+        beds: 'beds',
+        bedType: 'bedType',
+      }
+    });
+
+    fetch('#')
+    .then(function(response) {
+      return response;
     })
-  }
+
+  };
 
 
   render() {
     return (
-      <Form onSubmit={this.submitForm} >
+      <Form onSubmit={this.submitFullForm} >
         <FormGroup>
           <Label for="Zip">Zip Code</Label>
-          <Input type="text" name="zip" id="exampleZip" placeholder="Zip Code" />
+          <Input value={this.state.form} type="number" name="zipCode" id="exampleZip" placeholder="Zip Code" onChange={this.updateHandler} />
         </FormGroup>
         <FormGroup>
           <Label for="PropertyType">Property Type</Label>
-          <Input type="select" name="propertyType" id="PropertyType">
+          <Input value={this.state.proprtyType} type="select" name="propertyType" id="PropertyType">
             <option>Apartment</option>
             <option>House</option>
             <option>Condominium</option>
@@ -49,14 +76,15 @@ export default class FullInputs extends React.Component {
         </FormGroup>
         <FormGroup>
           <Label for="RoomType">Room Type</Label>
-          <Input type="select" name="RoomType" id="RoomType">
-            <option>Single Room</option>
+          <Input value={this.state.roomType} type="select" name="roomType" id="RoomType">
+            <option>Private Room</option>
+            <option>Shared Room</option>
             <option>Entire Property</option>
           </Input>
           </FormGroup>
           <FormGroup>
-          <Label for="Accommodates">Accommodates How Many Guests?</Label>
-          <Input type="select" name="Accommodates" id="Accommodates">
+          <Label value={this.state.accommodates} for="Accommodates">Accommodates How Many Guests?</Label>
+          <Input type="select" name="accommodates" id="Accommodates">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -64,9 +92,9 @@ export default class FullInputs extends React.Component {
             <option>5+</option>
           </Input>
           </FormGroup>
-        <FormGroup>
+          <FormGroup>
           <Label for="Bathrooms">Number of Bathrooms</Label>
-          <Input type="select" name="Bathrooms" id="Bathrooms">
+          <Input value={this.state.bathrooms}  type="select" name="bathrooms" id="Bathrooms">
             <option>1-2</option>
             <option>2-3</option>
             <option>3-4</option>
@@ -75,7 +103,7 @@ export default class FullInputs extends React.Component {
           </FormGroup>
           <FormGroup>
           <Label for="Bedrooms">Number of Bedrooms</Label>
-          <Input type="select" name="Bedrooms" id="Bedrooms">
+          <Input value={this.state.bedrooms} type="select" name="bedrooms" id="Bedrooms">
             <option>1</option>
             <option>2</option>
             <option>3+</option>
@@ -83,7 +111,7 @@ export default class FullInputs extends React.Component {
         </FormGroup>
         <FormGroup>
           <Label for="Beds">Beds</Label>
-          <Input type="select" name="Beds" id="Beds">
+          <Input value={this.state.beds} type="select" name="beds" id="Beds">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -93,9 +121,11 @@ export default class FullInputs extends React.Component {
         </FormGroup>
         <FormGroup>
           <Label for="BedType">Bed Type</Label>
-          <Input type="select" name="BedType" id="BedType">
+          <Input value={this.state.bedType} type="select" name="bedType" id="BedType">
             <option>Standard Bed</option>
             <option>Foton</option>
+            <option>Couch</option>
+            <option>Couch</option>
             <option>Couch</option>
           </Input>
           </FormGroup>

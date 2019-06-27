@@ -15,7 +15,7 @@ import StaticCarousel from '../Components/Carousel';
 class Home extends React.Component {
     state={
     }
-    //If there is a user logged in, render the header/tabs components, otherwise reroute to Login page
+    
     render() {
         if (localStorage.getItem('token'))
             return (

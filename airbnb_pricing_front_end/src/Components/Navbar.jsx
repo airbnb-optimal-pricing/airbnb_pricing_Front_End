@@ -7,14 +7,8 @@ import {
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+  } from 'reactstrap';
 
-    import RegisterModal from '../Components/Auth/RegisterModal';
-    import LoginModal from '../Components/Auth/LoginModal';
-    import Logout from './Auth/Logout';
   
   export default class NavBar extends React.Component {
     constructor(props) {
