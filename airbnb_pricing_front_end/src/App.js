@@ -1,30 +1,27 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-//components
-import NavBar from './Components/Navbar';
-import BaseInputs from './Components/BaseInputs';
+//Components
+import Home from './Views/Home';
+// import PrivateRoute from './PrivateRoute';
+import LoginPage from './Components/Auth/LoginPage';
+import RegisterPage from './Components/Auth/RegisterPage';
 
-
-
-
-
+//style
 import './App.css';
 
-function App() {
 
+function App() {
   return (
-    <div>
-       <NavBar />
-      <header className="App-header"> 
-        <h1>Hero Title</h1>
-        <h2>Subheader</h2>
-      </header>
-      <div>
-        <BaseInputs />
+    <Router>
+      <div className="App">
       </div>
-    </div>
+
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/register" component={RegisterPage} />
+        
+    </Router>
   );
 }
 
