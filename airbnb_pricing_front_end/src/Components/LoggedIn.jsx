@@ -10,12 +10,16 @@ import styled from 'styled-components';
 const StyledFullForm = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin-top: 50px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 25%;
     margin-bottom: 50px;
-    margin-left: 10%;
+    margin-left: 5%;
+`;
+
+const StyledValuation = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 //component
@@ -58,7 +62,8 @@ class FullInputs extends React.Component {
 
   render() {
     return (
-      <StyledFullForm>
+      <div >
+      <StyledFullForm >
       <Form onSubmit={this.FullFormSubmit} >
           <FormGroup>
             <Label for="Zip">Zip Code</Label>
@@ -114,9 +119,13 @@ class FullInputs extends React.Component {
           </Input>
           </FormGroup>
         <Button>Submit</Button>
-        <p>Your Property is Worth Roughly {this.props.prediction} </p>
       </Form>
+      <StyledValuation>
+          <p>Your Property is Worth Roughly ${this.props.prediction} </p>
+      </StyledValuation>
       </StyledFullForm>
+
+      </div>
     );
   }
 }

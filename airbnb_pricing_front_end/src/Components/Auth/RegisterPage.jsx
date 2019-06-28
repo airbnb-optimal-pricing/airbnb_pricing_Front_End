@@ -38,7 +38,7 @@ class RegisterPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{ height: 1000, background: 'linear-gradient(to bottom, #ff1a1a, #ff4d4d)'}}>
                 <NavBar />
             <div className="topbar">
                 <p>AirBnB Price Navigator</p>

@@ -63,7 +63,7 @@ class LoginPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{height: 1000, background: 'linear-gradient(to bottom, #ff1a1a, #ff4d4d)'}} >
                 <NavBar />
                 <StyledTopBar>
                     <h1>Welcome to AirBnB Price Navigator</h1>
@@ -72,7 +72,7 @@ class LoginPage extends React.Component {
                 <SimpleInputs />
                 <div className="login-container">
                     <StyledDiv>
-                    <h3> Login </h3> 
+                    <h3> Login to see if you can make even more!</h3> 
                     <form className="login-form" onSubmit={this.login}>
                         <input
                             type="text"
@@ -93,7 +93,7 @@ class LoginPage extends React.Component {
                         <h4> Not a member? Sign up <Link to="/register"> here </Link></h4>
                         </form>
                     </StyledDiv>
-                     <StaticCarousel />
+                     {/* <StaticCarousel /> */}
                 </div>
             </div>
         )};
