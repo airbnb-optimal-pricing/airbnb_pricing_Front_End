@@ -7,13 +7,8 @@ import {
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+  } from 'reactstrap';
 
-    import RegisterModal from '../Components/Auth/RegisterModal';
-    import LoginModal from '../Components/Auth/LoginModal';
   
   export default class NavBar extends React.Component {
     constructor(props) {
@@ -38,28 +33,8 @@ import {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="#">Login</NavLink>
+                  <NavLink href="/login">Login</NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink href="#">About Us</NavLink>
-                </NavItem>
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav caret>
-                    Join/Login
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem>
-                      <RegisterModal />
-                    </DropdownItem>
-                    <DropdownItem>
-                      <LoginModal />
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    {/* <DropdownItem>
-                      Reset
-                    </DropdownItem> */}
-                  </DropdownMenu>
-                </UncontrolledDropdown>
               </Nav>
             </Collapse>
           </Navbar>
