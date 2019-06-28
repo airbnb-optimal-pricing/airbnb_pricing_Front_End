@@ -86,7 +86,7 @@ export const FullFormSubmit = newFullSubmit => dispatch => {
     dispatch({type: FULL_FORM_START});
     return axios
         .post(
-            '#', newFullSubmit
+            'https://airbnboptimalprice-backend.herokuapp.com/properties/userproperties', newFullSubmit
         )
         .then(res => {
             dispatch({type: FULL_FORM_SUCCESS, payload: res.data})

@@ -1,4 +1,4 @@
 [build]
-  base = "app/"
-  publish = "app/build"
-  command = "npm build"
+  base = "airbnb_pricing_front_end/"
+  publish = "airbnb_pricing_front_end/build"
+  command = "yarn build"

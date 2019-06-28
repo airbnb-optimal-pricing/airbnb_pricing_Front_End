@@ -28,12 +28,12 @@ import {
       return (
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">AirBnB Price Navigator</NavbarBrand>
+            <NavbarBrand href="/">AirBnB Price Navigator - Los Angeles</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/login">Login</NavLink>
+                  <NavLink href="/register">Register</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
