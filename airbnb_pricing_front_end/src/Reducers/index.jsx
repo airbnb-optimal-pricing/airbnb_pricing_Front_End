@@ -6,6 +6,12 @@ import {
     REGISTER_START,
     REGISTER_SUCCESS,
     REGISTER_FAILURE,
+    SIMPLE_FORM_START,
+    SIMPLE_FORM_SUCCESS,
+    SIMPLE_FORM_FAILURE,
+    FULL_FORM_START,
+    FULL_FORM_SUCCESS,
+    FULL_FORM_FAILURE,
 } from '../Actions/index';
 
 //initial
@@ -16,7 +22,8 @@ const initialState = {
     isLoggingIn: false,
     isRegistering: false,
     fetchingUser: false,
-    error: ''
+    error: '',
+    prediction: null, 
 }
 
 //reducer
@@ -61,6 +68,40 @@ function reducer(state = initialState, action) {
                 isRegistering: false,
                 error: 'Register failed'
             }
+        case SIMPLE_FORM_START:
+                return{
+                    ...state,
+                    isSubmitting: true,
+                }
+        case SIMPLE_FORM_SUCCESS:
+            return{
+                ...state,
+                isSubmitting: false,
+                prediction: action.payload.prediction,
+            }
+        case SIMPLE_FORM_FAILURE:
+            return{
+                ...state,
+                isSubmitting: false,
+            }       
+            
+        case FULL_FORM_START:
+            return{
+                ...state,
+                isSubmitting: true,
+            }
+        case FULL_FORM_SUCCESS:
+            return{
+                ...state,
+                isSubmitting: false,
+                prediction: action.payload.prediction,
+                }
+        case FULL_FORM_FAILURE:
+            return{
+                ...state,
+                isSubmitting: false,
+            } 
+            
             
         default: 
             return state;

@@ -1,21 +1,38 @@
 import React from 'react'
-
+import { FullFormSubmit } from '../Actions/';
+import { connect } from 'react-redux';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
+//styled-components
 
+import styled from 'styled-components';
 
-export default class FullInputs extends React.Component {
+const StyledFullForm = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 10%;
+`;
+
+//component
+
+class FullInputs extends React.Component {
   state = {
     form: {
-      zipCode: 0,
-      proprtyType: 'propertyType',
-      roomType: 'roomType',
-      accommodates: 'accommodates',
-      bathrooms: 'bathrooms',
-      bedrooms: 'bedrooms',
-      beds: 'beds',
-      bedType: 'bedType',
-    }
+      zipcode: '',
+      property_type: '',
+      room_type: '',
+      accommodates: 0,
+      bathrooms: 0,
+      bedrooms: 0,
+      beds: 0,
+      bed_type: '',
+    },
+    payload: null,
   }
 
   updateHandler = e => {
@@ -23,114 +40,90 @@ export default class FullInputs extends React.Component {
       form: {
         ...this.state.form,
         [e.target.name]: e.target.value
+      },
+      payload: {
+        ...this.state.payload,
       }
     });
   };
 
 
-  submitFullForm = (e) => {
+  FullFormSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.form);
-    this.setState({
-      form: {
-        zipCode: 0,
-        proprtyType: 'propertyType',
-        roomType: 'roomType',
-        accommodates: 'accommodates',
-        bathrooms: 'bathrooms',
-        bedrooms: 'bedrooms',
-        beds: 'beds',
-        bedType: 'bedType',
-      }
-    });
+    console.log('submitting:');
 
-    fetch('#')
-    .then(function(response) {
-      return response;
-    })
-
-  };
+    this.props.FullFormSubmit(this.state.form)
+  }
 
 
   render() {
     return (
-      <Form onSubmit={this.submitFullForm} >
+      <StyledFullForm>
+      <Form onSubmit={this.FullFormSubmit} >
+          <FormGroup>
+            <Label for="Zip">Zip Code</Label>
+            <Input value={this.state.zipcode} type="number" name="zipcode" id="exampleZip" placeholder="Zip Code" onChange={this.updateHandler} />
+          </FormGroup>
         <FormGroup>
-          <Label for="Zip">Zip Code</Label>
-          <Input value={this.state.form} type="number" name="zipCode" id="exampleZip" placeholder="Zip Code" onChange={this.updateHandler} />
-        </FormGroup>
-        <FormGroup>
-          <Label for="PropertyType">Property Type</Label>
-          <Input value={this.state.proprtyType} type="select" name="propertyType" id="PropertyType">
-            <option>Apartment</option>
-            <option>House</option>
-            <option>Condominium</option>
-            <option>Guest House</option>
-            <option>Other</option>
-            <option>Guest Suite</option>
-            <option>Townhouse</option>
-            <option>Bungalow</option>
-            <option>Loft</option>
-            <option>Villa</option>
+          <Label for="property_type">Property Type</Label>
+          <Input value={this.state.property_type} type="select" name="property_type" id="property_type" onChange={this.updateHandler}>
+            <option value='Apartment' >Apartment</option>
+            <option value='House' >House</option>
+            <option value='Condominium' >Condominium</option>
+            <option value='Guesthouse' >Guest House</option>
+            <option value='Other' >Other</option>
+            <option value='Guest suite' >Guest Suite</option>
+            <option value='Townhouse' >Townhouse</option>
+            <option value='Bungalow' >Bungalow</option>
+            <option value='Loft' >Loft</option>
+            <option value='Villa' >Villa</option>
           </Input>
         </FormGroup>
         <FormGroup>
-          <Label for="RoomType">Room Type</Label>
-          <Input value={this.state.roomType} type="select" name="roomType" id="RoomType">
-            <option>Private Room</option>
-            <option>Shared Room</option>
-            <option>Entire Property</option>
+          <Label for="room_type">Room Type</Label>
+          <Input value={this.state.room_type} type="select" name="room_type" id="room_type" onChange={this.updateHandler}>
+          <option value='Entire home/apt' >Entire Property</option>
+            <option value='Private room' >Private Room</option>
+            <option value='Shared room' >Shared Room</option>
           </Input>
           </FormGroup>
           <FormGroup>
           <Label value={this.state.accommodates} for="Accommodates">Accommodates How Many Guests?</Label>
-          <Input type="select" name="accommodates" id="Accommodates">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5+</option>
-          </Input>
+          <Input value={this.state.accommodates} type="number" name="accommodates" id="accommodates" placeholder="Accommodates How Many Guests?" onChange={this.updateHandler} />
           </FormGroup>
           <FormGroup>
           <Label for="Bathrooms">Number of Bathrooms</Label>
-          <Input value={this.state.bathrooms}  type="select" name="bathrooms" id="Bathrooms">
-            <option>1-2</option>
-            <option>2-3</option>
-            <option>3-4</option>
-            <option>4+</option>
-          </Input>
+          <Input value={this.state.bathrooms} type="number" name="bathrooms" id="examplebathrooms" placeholder="Number of Bathrooms" onChange={this.updateHandler} />
           </FormGroup>
           <FormGroup>
           <Label for="Bedrooms">Number of Bedrooms</Label>
-          <Input value={this.state.bedrooms} type="select" name="bedrooms" id="Bedrooms">
-            <option>1</option>
-            <option>2</option>
-            <option>3+</option>
-          </Input>
+          <Input value={this.state.bedrooms} type="number" name="bedrooms" id="examplebedrooms" placeholder="Number of Bedrooms" onChange={this.updateHandler} />
         </FormGroup>
         <FormGroup>
           <Label for="Beds">Beds</Label>
-          <Input value={this.state.beds} type="select" name="beds" id="Beds">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5+</option>
-          </Input>
+          <Input value={this.state.beds} type="number" name="beds" id="beds" placeholder="Number of Beds" onChange={this.updateHandler} />
         </FormGroup>
         <FormGroup>
-          <Label for="BedType">Bed Type</Label>
-          <Input value={this.state.bedType} type="select" name="bedType" id="BedType">
-            <option>Standard Bed</option>
-            <option>Foton</option>
-            <option>Couch</option>
-            <option>Couch</option>
-            <option>Couch</option>
+          <Label for="bed_type">Bed Type</Label>
+          <Input value={this.state.bed_type} type="select" name="bed_type" id="bed_type" onChange={this.updateHandler}>
+            <option value='Real Bed' >Standard Bed</option>
+            <option value = 'Couch' >Couch</option>
+            <option value = 'Futon' >Futon</option>
+            <option value = 'Pull-out Sofa' >Pull-Out Couch</option>
+            <option value = 'Airbed' >Air Mattress</option>
           </Input>
           </FormGroup>
         <Button>Submit</Button>
+        <p>Your Property is Worth Roughly {this.props.prediction} </p>
       </Form>
+      </StyledFullForm>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  isSubmitting : state.isSubmitting,
+  prediction: state.prediction
+});
+
+export default connect(mapStateToProps, { FullFormSubmit })(FullInputs);
