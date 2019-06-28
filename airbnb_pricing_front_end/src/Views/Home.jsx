@@ -19,7 +19,7 @@ class Home extends React.Component {
     render() {
         if (localStorage.getItem('token'))
             return (
-                <div>
+                <div style={{background: 'linear-gradient(to bottom, #ff1a1a, #ff4d4d)'}}>
                     <NavBar />
                     <FullInputs />
                     <Logout />

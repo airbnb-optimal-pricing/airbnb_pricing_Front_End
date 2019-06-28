@@ -64,7 +64,7 @@ export const simpleFormSubmit = newSimpleSubmit => dispatch => {
     dispatch({type: SIMPLE_FORM_START});
     return axios
         .post(
-            'https://airbnboptimalprice-backend.herokuapp.com/simple/simpleprediction', newSimpleSubmit
+            'https://airbnboptimalprice-backend.herokuapp.com/simple/purefunroute', newSimpleSubmit
         )
         .then(res => {
             dispatch({type: SIMPLE_FORM_SUCCESS, payload: res.data})
