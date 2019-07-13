@@ -6,7 +6,6 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
   } from 'reactstrap';
 
   
@@ -28,12 +27,12 @@ import {
       return (
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">AirBnB Price Navigator - Los Angeles</NavbarBrand>
+            <NavbarBrand href="/">AirBnB Price Navigator</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/register">Register</NavLink>
+                  {/* <NavLink href="/register">Register</NavLink> */}
                 </NavItem>
               </Nav>
             </Collapse>

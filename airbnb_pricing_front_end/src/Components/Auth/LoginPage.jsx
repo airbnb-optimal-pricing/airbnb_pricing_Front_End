@@ -5,8 +5,7 @@ import { LogIn } from '../../Actions/index';
 import { Link } from 'react-router-dom';
 
 import NavBar from '../Navbar';
-import SimpleInputs from '../SimpleInputs';
-import StaticCarousel from '../Carousel';
+import FullInputs from '../HomeInputs';
 
 //styled-components
 
@@ -63,39 +62,17 @@ class LoginPage extends React.Component {
 
     render() {
         return (
-            <div style={{height: 1000, background: 'linear-gradient(to bottom, #ff1a1a, #ff4d4d)'}} >
+            <div style={{height: 2000, background: 'linear-gradient(to bottom, #ff1a1a, #ff4d4d)'}} >
                 <NavBar />
                 <StyledTopBar>
                     <h1>Welcome to AirBnB Price Navigator</h1>
                     <h3>Know the value of your property by entering your information below:</h3>
                 </StyledTopBar>
-                <SimpleInputs />
-                <div className="login-container">
-                    <StyledDiv>
-                    <h3> Login to see if you can make even more!</h3> 
-                    <form className="login-form" onSubmit={this.login}>
-                        <input
-                            type="text"
-                            name="username"
-                            placeholder="Username"
-                            onChange={this.handleChanges}
-                            value={this.state.auth.username}
-                        />
-                        <input
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            
-                            onChange={this.handleChanges}
-                            value={this.state.auth.password}
-                        />
-                        <button> Submit </button>
-                        <h4> Not a member? Sign up <Link to="/register"> here </Link></h4>
-                        </form>
-                    </StyledDiv>
-                     {/* <StaticCarousel /> */}
+
+                <FullInputs />
+                
+                
                 </div>
-            </div>
         )};
 }
 

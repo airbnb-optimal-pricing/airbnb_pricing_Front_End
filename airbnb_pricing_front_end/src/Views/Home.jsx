@@ -6,7 +6,6 @@ import { Redirect } from 'react-router-dom';
 
 import NavBar from '../Components/Navbar';
 import FullInputs from '../Components/LoggedIn';
-import Logout from '../Components/Auth/Logout';
 import StaticCarousel from '../Components/Carousel';
 
 
@@ -22,13 +21,12 @@ class Home extends React.Component {
                 <div style={{background: 'linear-gradient(to bottom, #ff1a1a, #ff4d4d)'}}>
                     <NavBar />
                     <FullInputs />
-                    <Logout />
                     <StaticCarousel />
                 </div>
                 );
        else 
         return ( 
-                <Redirect to='/login' />
+                <Redirect to='/' />
         );
     }
 }

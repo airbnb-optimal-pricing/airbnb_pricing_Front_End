@@ -16,11 +16,7 @@ function App() {
     <Router>
       <div className="App">
       </div>
-
-        <Route exact path="/" component={Home} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/register" component={RegisterPage} />
-        
+        <Route exact path="/" component={LoginPage} />
     </Router>
   );
 }
