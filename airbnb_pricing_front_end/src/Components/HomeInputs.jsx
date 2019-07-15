@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Container, Row, Col } from 'reactstrap';
 import { FullFormSubmit } from '../Actions';
 import { connect } from 'react-redux';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
@@ -20,6 +21,9 @@ const StyledFullForm = styled.div`
 const StyledValuation = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 50%;
+  border: 1px solid black;
+  padding: 20px;
 `;
 
 //component
@@ -62,8 +66,10 @@ class FullInputs extends React.Component {
 
   render() {
     return (
-      <div >
-      <StyledFullForm >
+      <Container >
+
+      <Row>
+      <Col xs="6">
       <Form onSubmit={this.FullFormSubmit} >
           <FormGroup>
             <Label for="Zip">Zip Code</Label>
@@ -120,13 +126,17 @@ class FullInputs extends React.Component {
           </FormGroup>
         <Button>Submit</Button>
       </Form>
-      </StyledFullForm>
+      </Col>
 
+      <Col xs="6">
       <StyledValuation>
-          <p>Your Property is Worth Roughly ${this.props.prediction} </p>
+          <h3>Your Property is Worth Roughly ${this.props.prediction} </h3>
       </StyledValuation>
+      </Col>
 
-      </div>
+      </Row>
+
+      </Container>
     );
   }
 }

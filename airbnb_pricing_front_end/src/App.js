@@ -2,10 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 //Components
-import Home from './Views/Home';
+
 // import PrivateRoute from './PrivateRoute';
-import LoginPage from './Components/Auth/LoginPage';
-import RegisterPage from './Components/Auth/RegisterPage';
+import LoginPage from './Components/Auth/LandingPage';
 
 //style
 import './App.css';

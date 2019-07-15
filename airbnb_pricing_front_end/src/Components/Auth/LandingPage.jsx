@@ -6,22 +6,11 @@ import { Link } from 'react-router-dom';
 
 import NavBar from '../Navbar';
 import FullInputs from '../HomeInputs';
+import Carousel from '../Carousel';
 
 //styled-components
 
 import styled from 'styled-components';
-
-const StyledDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 10%;
-`;
-
 
 const StyledTopBar = styled.div`
     display: flex;
@@ -29,6 +18,17 @@ const StyledTopBar = styled.div`
     align-items: center;
     margin-top: 50px;
     margin-bottom: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+`;
+
+const StyledCarouselDiv = styled.div`
+    display: flex;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
 `;
 
 //component
@@ -62,16 +62,19 @@ class LoginPage extends React.Component {
 
     render() {
         return (
-            <div style={{height: 2000, background: 'linear-gradient(to bottom, #ff1a1a, #ff4d4d)'}} >
+            <div style={{height: "100%", background: 'linear-gradient(to bottom, #ffafbd , #ffc3a0)'}} >
                 <NavBar />
                 <StyledTopBar>
                     <h1>Welcome to AirBnB Price Navigator</h1>
-                    <h3>Know the value of your property by entering your information below:</h3>
+                    <h3>Know the value of your property</h3>
+                    <h3>Enter your information below:</h3>
                 </StyledTopBar>
-
                 <FullInputs />
-                
-                
+                <br/>
+                <StyledCarouselDiv>
+                    <Carousel />
+                </StyledCarouselDiv>
+                <br/>
                 </div>
         )};
 }
