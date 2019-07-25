@@ -3,28 +3,19 @@ import {Container, Row, Col } from 'reactstrap';
 import { FullFormSubmit } from '../Actions';
 import { connect } from 'react-redux';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import Plot from 'react-plotly.js';
 
 //styled-components
 
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-const StyledFullForm = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 25%;
-    margin-bottom: 50px;
-    margin-left: 5%;
-`;
-
-const StyledValuation = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 50%;
-  border: 1px solid black;
-  padding: 20px;
-`;
+// const StyledValuation = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   margin-top: 50%;
+//   border: 1px solid black;
+//   padding: 20px;
+// `;
 
 //component
 
@@ -129,9 +120,25 @@ class FullInputs extends React.Component {
       </Col>
 
       <Col xs="6">
-      <StyledValuation>
-          <h3>Your Property is Worth Roughly ${this.props.prediction} </h3>
-      </StyledValuation>
+      {/* TODO ADD  StyledValuation to app.css */}
+      <div className="">
+          <h3>Your Property could be worth: ${this.props.prediction} </h3>
+        <Plot
+          data={[
+            //{
+            //  x: [1, 2, 3, 4, 5, 6],
+            //  y: [2, 6, 3, 10, 4, 6]
+            //},
+            {type: 'bar', x: [0, 1, 2, 3, 4, 5, 6, 7, 8], y: [22,32,53,67,42,34,21,9]},]}
+          layout={ {width: 520, height: 340, title: 'Properties in your Area'} }
+        /> 
+      </div>
+      <div>
+        <h3>New Content</h3>
+      </div>
+      <div>
+        <h3>Newer Content</h3>
+      </div>
       </Col>
 
       </Row>
@@ -143,10 +150,14 @@ class FullInputs extends React.Component {
 
 const mapStateToProps = state => ({
   isSubmitting : state.isSubmitting,
-  prediction: state.prediction
+  prediction: state.prediction,
 });
 
+
+
 export default connect(mapStateToProps, { FullFormSubmit })(FullInputs);
+
+
 
 
 // import React from 'react';
