@@ -31,4 +31,11 @@
     transform: rotate(360deg);
   }
 }
+ 
+.a-img {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
 

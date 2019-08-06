@@ -18,7 +18,7 @@ class Home extends React.Component {
     render() {
         if (localStorage.getItem('token'))
             return (
-                <div style={{background: 'linear-gradient(to bottom, #ff1a1a, #ff4d4d)'}}>
+                <div style={{background: 'linear-gradient(to bottom, #bdc3c7 , #2c3e50)'}}>
                     <NavBar />
                     <FullInputs />
                     <StaticCarousel />
