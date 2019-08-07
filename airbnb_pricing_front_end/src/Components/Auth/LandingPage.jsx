@@ -1,13 +1,10 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
-<<<<<<< HEAD
 import { LogIn } from '../../Actions/index';
 import NavBar from '../Navbar';
 import FullInputs from '../FullInputs';
 import styled from 'styled-components';
-
-
 const StyledTopBar = styled.div`
     display: flex;
     flex-direction: column;
@@ -31,7 +28,7 @@ const StyledTestingBox = styled.div`
     flex-direction: column;
     align-items: center;
     border: 2px solid black;
-    height: auto;
+    height: 300px;
     font-size: 1.5em; 
     padding-top: 50px;
     padding-right: 200px;
@@ -44,7 +41,7 @@ const StyledPage = styled.div`
     flex-direction: column;
     align-items: center;
     border: 2px solid black;
-    height: auto;
+    height: 300px;
     font-size: 1.5em; 
     padding-top: 50px;
     padding-right: 200px;
@@ -57,7 +54,7 @@ const StyledPage2 = styled.div`
     flex-direction: column;
     align-items: center;
     border: 2px solid black;
-    height: auto;
+    height: 300px;
     font-size: 1.5em; 
     padding-top: 50px;
     padding-right: 200px;
@@ -70,7 +67,7 @@ const StyledPage3 = styled.div`
     flex-direction: column;
     align-items: center;
     border: 2px solid black;
-    height: auto;
+    height: 300px;
     font-size: 1.5em; 
     padding-top: 50px;
     padding-right: 200px;
@@ -83,7 +80,7 @@ const StyledPage4 = styled.div`
     flex-direction: column;
     align-items: center;
     border: 2px solid black;
-    height: auto;
+    height: 300px;
     font-size: 1.5em; 
     padding-top: 50px;
     padding-right: 200px;
@@ -96,7 +93,7 @@ const StyledPage5 = styled.div`
     flex-direction: column;
     align-items: center;
     border: 2px solid black;
-    height: auto;
+    height: 300px;
     font-size: 1.5em; 
     padding-top: 50px;
     padding-right: 200px;
@@ -121,12 +118,6 @@ const StyledPage5 = styled.div`
 //     align-content: stretch; 
 //     p{font-size: 1.2rem}
 // `;
-=======
-
-import { LogIn } from '../../Actions/index';
-import NavBar from '../Navbar';
-import FullInputs from '../HomeInputs';
->>>>>>> 3fb66c22dd5ecffdcc9bd79f3e5bccf20fee966c
 
 class LoginPage extends React.Component {
     state = {
@@ -154,12 +145,11 @@ class LoginPage extends React.Component {
     
     render() {
         return (
-            <div className="landing-page" >
+            <div style={{height: "100%", background: 'linear-gradient(to bottom, #ffafbd , #ffc3a0)'}} >
                 <NavBar />
-                <div className="Styled-Top-Bar">
+                <StyledTopBar>
                     <h1>Welcome to AirBnB Price Navigator</h1>
                     <h3>Know the value of your property</h3>
-<<<<<<< HEAD
                     <h3>Enter your information below:</h3>
                 </StyledTopBar>
                 <StyledFullInputsDiv>
@@ -203,7 +193,7 @@ class LoginPage extends React.Component {
                             <div class = "albert">
                                 <div>
                                     <a href="https://github.com/albert-h-wong">
-                                        <img class= "a-img" src={"/Images/albert.png"} alt = "albert"></img>
+                                        <img class= "a-img" src="/Images/albert.png" alt = "albert"></img>
                                     </a>
                                 </div>
                                 <div class = "a-content">
@@ -218,7 +208,7 @@ class LoginPage extends React.Component {
                             <div class = "connor">
                                 <div>
                                     <a href="https://github.com/connorpheraty">
-                                        <img class= "a-img" src="/Images/ConnorCropped.png" alt = "connor"></img>
+                                        <img class= "a-img" src="/Images/connor.png" alt = "connor"></img>
                                     </a>
                                 </div>
                                 <div class = "connor-content">                
@@ -252,7 +242,7 @@ class LoginPage extends React.Component {
                             <div class = "shreyas">
                                 <div>
                                     <a href="https://github.com/ShreyasJothish">
-                                        <img class= "a-img" src="/Images/shreyas.png" alt = "shreyas"></img>
+                                        <img class= "a-img" src="/Images/tomasfox.png" alt = "shreyas"></img>
                                     </a>
                                 </div>
                                 <div class = "sh-content">
@@ -270,7 +260,7 @@ class LoginPage extends React.Component {
                     <div class = "chris">
                         <div>
                         <a href="https://github.com/ChrisJCarter91">
-                            <img class= "a-img" src="/Images/Me.jpeg" alt = "chris"></img>
+                            <img class= "a-img" src="/Images/tomasfox.png" alt = "chris"></img>
                         </a>
                         </div>
                         <div class = "ch-content">
@@ -283,21 +273,12 @@ class LoginPage extends React.Component {
                     </div>
                 
                     </Col>
-=======
-                </div>
-                <FullInputs />
-                <br/>
-                <br/>
-            </div>
-        )};
-}
->>>>>>> 3fb66c22dd5ecffdcc9bd79f3e5bccf20fee966c
 
                 <Col xs="6" sm="4">
                     <div class = "sam">
                         <div>
                             <a href="https://github.com/samjeffcoat">
-                                <img class= "a-img" src="/Images/sam.png" alt = "sam"></img>
+                                <img class= "a-img" src="/Images/tomasfox.png" alt = "sam"></img>
                             </a>
                         </div>
                     <div class = "s-content">                
@@ -318,7 +299,7 @@ class LoginPage extends React.Component {
                     <div class = "kelly">
                         <div>
                             <a href="https://github.com/misskellymore">
-                                <img class= "a-img" src="/Images/kelly.png" alt = "kelly"></img>
+                                <img class= "a-img" src="/Images/tomasfox.png" alt = "kelly"></img>
                             </a>
                         </div>
                         <div class = "k-content">
@@ -338,7 +319,7 @@ class LoginPage extends React.Component {
                     <div class = "fnu">
                         <div>
                             <a href="https://github.com/bharti3bk">
-                                <img class= "a-img" src="/Images/fnu.png" alt = "fnu"></img>
+                                <img class= "a-img" src="/Images/tomasfox.png" alt = "fnu"></img>
                             </a>
                         </div>
                         <div class = "f-content">
@@ -358,7 +339,7 @@ class LoginPage extends React.Component {
                     <div class = "noor">
                         <div>
                             <a href="https://github.com/nooraldarraji">
-                                <img class= "a-img" src="/Images/noor.png" alt = "noor"></img>
+                                <img class= "a-img" src="/Images/tomasfox.png" alt = "noor"></img>
                             </a>
                         </div>
                         <div class = "n-content">
