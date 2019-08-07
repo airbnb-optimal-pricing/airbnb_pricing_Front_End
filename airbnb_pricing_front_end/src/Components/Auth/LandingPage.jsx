@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
+<<<<<<< HEAD
 import { LogIn } from '../../Actions/index';
 import NavBar from '../Navbar';
 import FullInputs from '../FullInputs';
@@ -120,6 +121,12 @@ const StyledPage5 = styled.div`
 //     align-content: stretch; 
 //     p{font-size: 1.2rem}
 // `;
+=======
+
+import { LogIn } from '../../Actions/index';
+import NavBar from '../Navbar';
+import FullInputs from '../HomeInputs';
+>>>>>>> 3fb66c22dd5ecffdcc9bd79f3e5bccf20fee966c
 
 class LoginPage extends React.Component {
     state = {
@@ -147,11 +154,12 @@ class LoginPage extends React.Component {
     
     render() {
         return (
-            <div style={{height: "100%", background: 'linear-gradient(to bottom, #ffafbd , #ffc3a0)'}} >
+            <div className="landing-page" >
                 <NavBar />
-                <StyledTopBar>
+                <div className="Styled-Top-Bar">
                     <h1>Welcome to AirBnB Price Navigator</h1>
                     <h3>Know the value of your property</h3>
+<<<<<<< HEAD
                     <h3>Enter your information below:</h3>
                 </StyledTopBar>
                 <StyledFullInputsDiv>
@@ -275,6 +283,15 @@ class LoginPage extends React.Component {
                     </div>
                 
                     </Col>
+=======
+                </div>
+                <FullInputs />
+                <br/>
+                <br/>
+            </div>
+        )};
+}
+>>>>>>> 3fb66c22dd5ecffdcc9bd79f3e5bccf20fee966c
 
                 <Col xs="6" sm="4">
                     <div class = "sam">
