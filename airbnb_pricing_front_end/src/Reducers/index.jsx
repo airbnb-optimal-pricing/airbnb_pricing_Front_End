@@ -23,7 +23,9 @@ const initialState = {
     isRegistering: false,
     fetchingUser: false,
     error: '',
-    prediction: null, 
+    prediction: null,
+    plot_values:  [],
+    bins: []
 }
 
 //reducer
@@ -95,6 +97,8 @@ function reducer(state = initialState, action) {
                 ...state,
                 isSubmitting: false,
                 prediction: action.payload.prediction,
+                bins: action.payload.bins,
+                plot_values: action.payload.plot_values
                 }
         case FULL_FORM_FAILURE:
             return{
