@@ -114,7 +114,7 @@ class FullInputs extends React.Component {
       <Col xs="6">
       {/* TODO ADD  StyledValuation to app.css */}
       <div className="">
-          <h3>Your Property could be worth: ${this.props.prediction} </h3>
+          <h3>Estimated price per night: ${this.props.prediction} </h3>
         <Plot
           data={[
             {type: 'bar', marker: { color: 'pink', width: 20,}, x: ["$0-50","$50-100","$100-150","$150-200","$200-300","$300-400","$400-500","$500-750","$750-1,000","$1,000-50,000"], y: this.props.plot_values},]}
