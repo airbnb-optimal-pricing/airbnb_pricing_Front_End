@@ -190,13 +190,13 @@ class LoginPage extends React.Component {
                         <Row>
                             <Col xs="6" sm="4">
 
-                            <div class = "albert">
+                            <div className= "albert">
                                 <div>
                                     <a href="https://github.com/albert-h-wong">
-                                        <img class= "a-img" src="/Images/albert.png" alt = "albert"></img>
+                                        <img className= "a-img" src="/Images/albert.png" alt = "albert"></img>
                                     </a>
                                 </div>
-                                <div class = "a-content">
+                                <div className = "a-content">
                                     <h3>Albert Wong</h3> 
                                     <h4>Team Lead</h4>               
                                     <p>Project scrum master responsible for facilitating overall team execution.</p>
@@ -205,13 +205,13 @@ class LoginPage extends React.Component {
                             </Col>
                             
                             <Col xs="6" sm="4">
-                            <div class = "connor">
+                            <div className= "connor">
                                 <div>
                                     <a href="https://github.com/connorpheraty">
-                                        <img class= "a-img" src="/Images/connor.png" alt = "connor"></img>
+                                        <img className= "a-img" src="/Images/connor.png" alt = "connor"></img>
                                     </a>
                                 </div>
-                                <div class = "connor-content">                
+                                <div className= "connor-content">                
                                     <h3>Connor Heraty</h3>
                                     <p>Product Owner. Responsible for model implementation and flask deployment.</p>
                                 </div>
@@ -219,13 +219,13 @@ class LoginPage extends React.Component {
                             </Col>
                             
                             <Col xs="6" sm="4">
-                            <div class = "tomas">
+                            <div className= "tomas">
                                 <div>
                                     <a href="https://github.com/tomfox1">
-                                        <img class= "a-img" src="/Images/tomasfox.png" alt = "tomas"></img>
+                                        <img className= "a-img" src="/Images/tomasfox.png" alt = "tomas"></img>
                                     </a>
                                 </div>
-                                <div class ="t-content">
+                                <div className="t-content">
                                     <h3>Tomas Fox</h3>
                                     <p>Responsible for benchmarking our Airbnb 
                                         predictor app against Tree Ensemble ML 
@@ -239,13 +239,13 @@ class LoginPage extends React.Component {
 
                     <Row>
                         <Col xs="6" sm="4">
-                            <div class = "shreyas">
+                            <div className= "shreyas">
                                 <div>
                                     <a href="https://github.com/ShreyasJothish">
-                                        <img class= "a-img" src="/Images/tomasfox.png" alt = "shreyas"></img>
+                                        <img className= "a-img" src="/Images/tomasfox.png" alt = "shreyas"></img>
                                     </a>
                                 </div>
-                                <div class = "sh-content">
+                                <div className= "sh-content">
                                     <h3>Shreyas</h3>
                                     <p>Worked on Data Wrangling, 
                                         Feature Engineering, and Data Modeling 
@@ -257,13 +257,13 @@ class LoginPage extends React.Component {
 
 
                     <Col xs="6" sm="4">
-                    <div class = "chris">
+                    <div className= "chris">
                         <div>
                         <a href="https://github.com/ChrisJCarter91">
-                            <img class= "a-img" src="/Images/tomasfox.png" alt = "chris"></img>
+                            <img className= "a-img" src="/Images/tomasfox.png" alt = "chris"></img>
                         </a>
                         </div>
-                        <div class = "ch-content">
+                        <div className= "ch-content">
                             <h3>Chris Carter</h3>
                             <p>Responsible for the Front End of the project 
                             while partnering with the UI Developers and 
@@ -275,13 +275,13 @@ class LoginPage extends React.Component {
                     </Col>
 
                 <Col xs="6" sm="4">
-                    <div class = "sam">
+                    <div className= "sam">
                         <div>
                             <a href="https://github.com/samjeffcoat">
-                                <img class= "a-img" src="/Images/tomasfox.png" alt = "sam"></img>
+                                <img className= "a-img" src="/Images/tomasfox.png" alt = "sam"></img>
                             </a>
                         </div>
-                    <div class = "s-content">                
+                    <div className= "s-content">                
                         <h3>Sam Jeffcoat</h3>
                         <p>Created BackEnd API for our AirBnB predictor 
                             App using NodeJS/Express. Built database 
@@ -296,13 +296,13 @@ class LoginPage extends React.Component {
 
                 <Row>
                     <Col xs="6" sm="4"> 
-                    <div class = "kelly">
+                    <div className= "kelly">
                         <div>
                             <a href="https://github.com/misskellymore">
-                                <img class= "a-img" src="/Images/tomasfox.png" alt = "kelly"></img>
+                                <img className= "a-img" src="/Images/tomasfox.png" alt = "kelly"></img>
                             </a>
                         </div>
-                        <div class = "k-content">
+                        <div className= "k-content">
                             <h3>Kelly Moreira</h3>
                             <p>Responsible for creating the multi-page 
                                 marketing website and making it 
@@ -316,13 +316,13 @@ class LoginPage extends React.Component {
                     </Col>
 
                     <Col xs="6" sm="4"> 
-                    <div class = "fnu">
+                    <div className= "fnu">
                         <div>
                             <a href="https://github.com/bharti3bk">
-                                <img class= "a-img" src="/Images/tomasfox.png" alt = "fnu"></img>
+                                <img className= "a-img" src="/Images/tomasfox.png" alt = "fnu"></img>
                             </a>
                         </div>
-                        <div class = "f-content">
+                        <div className= "f-content">
                             <h3>Fnu Bharti</h3>
                             <p>Responsible for creating the multi-page 
                                 marketing website and making it 
@@ -336,13 +336,13 @@ class LoginPage extends React.Component {
                     </Col>
 
                     <Col xs="6" sm="4"> 
-                    <div class = "noor">
+                    <div className= "noor">
                         <div>
                             <a href="https://github.com/nooraldarraji">
-                                <img class= "a-img" src="/Images/tomasfox.png" alt = "noor"></img>
+                                <img className= "a-img" src="/Images/tomasfox.png" alt = "noor"></img>
                             </a>
                         </div>
-                        <div class = "n-content">
+                        <div className= "n-content">
                             <h3>Noor Al Darraji</h3>
                             <p>Responsible for creating the multi-page 
                                     marketing website and making it 
