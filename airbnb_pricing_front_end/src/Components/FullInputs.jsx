@@ -40,7 +40,13 @@ class FullInputs extends React.Component {
     this.props.FullFormSubmit(this.state.form)
   }
 
-
+  convertListOfIntToListString = (x) => {
+    console.log(x);
+    const y = x.map(function(item) {
+      return `${x}`;
+    });
+    console.log(y);
+  }
   render() {
     return (
       <Container >
@@ -111,20 +117,11 @@ class FullInputs extends React.Component {
           <h3>Your Property could be worth: ${this.props.prediction} </h3>
         <Plot
           data={[
-            //{
-            //  x: [1, 2, 3, 4, 5, 6],
-            //  y: [2, 6, 3, 10, 4, 6]
-            //},
-            {type: 'bar', x: this.props.bins, y: this.props.plot_values},]}
-          layout={ {width: 520, height: 340, title: 'Properties in your Area'} }
+            {type: 'bar', marker: { color: 'pink', width: 20,}, x: ["$0-50","$50-100","$100-150","$150-200","$200-300","$300-400","$400-500","$500-750","$750-1,000","$1,000-50,000"], y: this.props.plot_values},]}
+          layout={ {width: 520, height: 340, title: 'Properties in your Area',font:{family: 'Raleway, sans-serif'}}} 
         /> 
       </div>
-      <div>
-        <h3>New Content</h3>
-      </div>
-      <div>
-        <h3>Newer Content</h3>
-      </div>
+
       </Col>
 
       </Row>

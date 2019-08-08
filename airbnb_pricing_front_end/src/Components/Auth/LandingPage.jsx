@@ -150,7 +150,6 @@ class LoginPage extends React.Component {
                 <StyledTopBar>
                     <h1>Welcome to AirBnB Price Navigator</h1>
                     <h3>Know the value of your property</h3>
-                    <h3>Enter your information below:</h3>
                 </StyledTopBar>
                 <StyledFullInputsDiv>
                     <FullInputs />
